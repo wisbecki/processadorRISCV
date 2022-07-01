@@ -11,7 +11,7 @@ end processador;
 architecture arqui_processador of processador is
 	
 	-- memória de instrução
-	component memoria_rom2 is 
+	component memoria_rom is 
 		port (i_LD 		: 	in std_logic;
 				ende 		: in std_logic_vector(31 downto 0);
 				dado    	: out std_logic_vector(31 downto 0));	
@@ -143,7 +143,7 @@ architecture arqui_processador of processador is
 	
 	begin 
 	
-	u1_rom			:	memoria_rom2	port map(i_LD			=> i_LD,
+	u1_rom			:	memoria_rom	port map(i_LD			=> i_LD,
 															ende			=>	w_s_pc,
 															dado			=>	w_inst);		
 		
